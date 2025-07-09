@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Contacto - MiEmpresa</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-logo">
+                <h1>ElPepe</h1>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="index.html#servicios">Servicios</a></li>
+                <li><a href=https://open.spotify.com/playlist/1xzPrXTvp4mn3tmwxllvrP?si=nc_qb4bzRf-AjThTjvxLpw>Contacto</a></li>
+            </ul>
+            <button class="theme-toggle" id="themeToggle" aria-label="Cambiar modo oscuro">
+                <span class="icon">🌙</span>
+            </button>
+        </nav>
+    </header>
+
+    <section id="contacto" class="contact-section">
+        <div class="container">
+            <h2>Para Comenzar...</h2>
+            <p>Completa el formulario y nos pondremos en contacto contigo en menos de 24 horas.</p>
+            
+            <form id="contactForm" class="contact-form" novalidate>
+                <div class="form-group">
+                    <label for="nombre">Nombre completo *</label>
+                    <input 
+                        type="text" 
+                        id="nombre" 
+                        name="nombre" 
+                        required
+                        placeholder="Ingresa tu nombre completo"
+                    >
+                    <span class="error-message" id="nombre-error"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Correo electrónico *</label>
+                    <input 
+                        type="email" 
+                        id="email" 
+                        name="email" 
+                        required
+                        placeholder="ejemplo@correo.com"
+                    >
+                    <span class="error-message" id="email-error"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="telefono">Teléfono</label>
+                    <input 
+                        type="tel" 
+                        id="telefono" 
+                        name="telefono" 
+                        placeholder="569 12345678"
+                    >
+                    <span class="error-message" id="telefono-error"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="servicio">Servicio de interés</label>
+                    <select id="servicio" name="servicio">
+                        <option value="">Selecciona un servicio</option>
+                        <option value="consultoria">Consultoría</option>
+                        <option value="desarrollo">Desarrollo Web</option>
+                        <option value="marketing">Marketing Digital</option>
+                        <option value="otros">Otros</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="mensaje">Mensaje</label>
+                    <textarea 
+                        id="mensaje" 
+                        name="mensaje" 
+                        rows="4"
+                        placeholder="Cuéntanos sobre tu proyecto..."
+                    ></textarea>
+                </div>
+                <div class="form-group checkbox-group">
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="terminos" name="terminos" required>
+                        <span class="checkmark"></span>
+                        Acepto los <a href="#" class="link">términos y condiciones</a> *
+                    </label>
+                    <span class="error-message" id="terminos-error"></span>
+                </div>
+
+                <button type="submit" class="submit-button">
+                    <span class="button-text">Enviar mensaje</span>
+                    <span class="button-loading">Enviando...</span>
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 MiEmpresa. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <div id="successModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>¡Mensaje enviado!</h3>
+                <button class="modal-close" onclick="closeModal()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p>Gracias por contactarnos. Nos pondremos en contacto contigo pronto.</p>
+                <div style="text-align: center; margin-top: 1rem;">
+                    <img src="fotos/stella-snoot-game.gif" alt="Stella Snoot" style="width: 100px; height: auto; border-radius: 8px;">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="modal-button" onclick="closeModal()">Cerrar</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
